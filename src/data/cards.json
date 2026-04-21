@@ -1,0 +1,587 @@
+[
+  {
+    "id": "card-01",
+    "dificuldade": "facil",
+    "categoria": "Diagnóstico",
+    "resposta": "Lombalgia mecânica inespecífica",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Não apresenta causa estrutural específica identificável.",
+      "2": "O exame neurológico costuma ser normal.",
+      "3": "Não há sinais de alarme associados.",
+      "4": "A dor piora com movimento ou esforço.",
+      "5": "Geralmente tem evolução benigna.",
+      "6": "É a causa mais comum de dor lombar."
+    }
+  },
+  {
+    "id": "card-02",
+    "dificuldade": "facil",
+    "categoria": "Diagnóstico",
+    "resposta": "Radiculopatia (lombociatalgia)",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Compressão de raiz nervosa lombar ou sacral.",
+      "2": "Irradia abaixo do joelho em distribuição dermatomal",
+      "3": "Sintomas neurológicos (parestesias ou fraqueza)",
+      "4": "Frequentemente é unilateral.",
+      "5": "Associada à hérnia de disco ou estenose espinhal",
+      "6": "Dor lombar de causa neurológica"
+    }
+  },
+  {
+    "id": "card-03",
+    "dificuldade": "medio",
+    "categoria": "Diagnóstico",
+    "resposta": "Síndrome da cauda equina",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Anestesia em sela é um achado típico.",
+      "2": "Decorre de compressão neurológica importante.",
+      "3": "É uma emergência associada à lombalgia.",
+      "4": "Pode cursar com retenção urinária indolor.",
+      "5": "Disfunção sexual (presente quando investigada)",
+      "6": "Os sintomas podem ser bilaterais."
+    }
+  },
+  {
+    "id": "card-04",
+    "dificuldade": "medio",
+    "categoria": "Diagnóstico",
+    "resposta": "Fratura vertebral osteoporótica",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Vértebra fraturada por porosidade",
+      "2": "Tto: vertebroplastia percutânea",
+      "3": "Comum na transição toracolombar",
+      "4": "Causa deformidade e cifose",
+      "5": "Alta morbidade em idosos",
+      "6": "Causa estrutural importante de dor lombar"
+    }
+  },
+  {
+    "id": "card-05",
+    "dificuldade": "dificil",
+    "categoria": "Diagnóstico",
+    "resposta": "Espondilodiscite",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Infecção de vértebra e disco",
+      "2": "Ressonância magnética padrão-ouro",
+      "3": "VHS e PCR elevados",
+      "4": "Staphylococcus aureus principal agente",
+      "5": "Predomina no sexo masculino",
+      "6": "Incidência 2,4 por 100.000"
+    }
+  },
+  {
+    "id": "card-06",
+    "dificuldade": "medio",
+    "categoria": "Diagnóstico",
+    "resposta": "Espondilite anquilosante",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Famosa \"coluna em bambu\"",
+      "2": "Sacroileíte é o sinal inicial",
+      "3": "Forte associação ao gene HLA-B27",
+      "4": "Dor lombar melhora com exercícios",
+      "5": "Prevalente em homens adultos jovens",
+      "6": "Doença inflamatória autoimune crônica"
+    }
+  },
+  {
+    "id": "card-07",
+    "dificuldade": "facil",
+    "categoria": "Diagnóstico",
+    "resposta": "Nefrolitíase",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Cálculo mimetizando dor lombar",
+      "2": "Hematúria e náuseas associadas",
+      "3": "Sinal de Giordano positivo",
+      "4": "Irradiação para a virilha",
+      "5": "Sem melhora com repouso",
+      "6": "Dor profunda e unilateral"
+    }
+  },
+  {
+    "id": "card-08",
+    "dificuldade": "facil",
+    "categoria": "Diagnóstico",
+    "resposta": "Pielonefrite",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Inflamação da cápsula renal",
+      "2": "Punho-percussão lombar dolorosa",
+      "3": "Sem alívio com repouso",
+      "4": "Dor profunda em flancos",
+      "5": "Irradiação para baixo ventre",
+      "6": "Febre e dor lombar"
+    }
+  },
+  {
+    "id": "card-09",
+    "dificuldade": "medio",
+    "categoria": "Diagnóstico",
+    "resposta": "Espondilolistese",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Vértebra escorrega sobre outra",
+      "2": "Classificada em cinco graus",
+      "3": "Desalinhamento ósseo na coluna",
+      "4": "Gera instabilidade no segmento",
+      "5": "Frequentemente causa dor ciática",
+      "6": "Lesão comum em ginastas"
+    }
+  },
+  {
+    "id": "card-10",
+    "dificuldade": "dificil",
+    "categoria": "Diagnóstico",
+    "resposta": "Tuberculose vertebral (Doença de Pott)",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Tuberculose na coluna vertebral",
+      "2": "Epônimo do cirurgião Pott",
+      "3": "Reativação hematogênica de bacilos",
+      "4": "Risco de deformidade cifótica",
+      "5": "Afeta principalmente vértebras torácicas",
+      "6": "Início lento e silencioso"
+    }
+  },
+  {
+    "id": "card-11",
+    "dificuldade": "dificil",
+    "categoria": "Diagnóstico",
+    "resposta": "Mieloma múltiplo",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Neoplasia maligna medular",
+      "2": "Hipercalcemia e insuficiência renal",
+      "3": "Proteína Bence Jones urinária",
+      "4": "Lesões líticas ósseas",
+      "5": "Produção imunoglobulina monoclonal",
+      "6": "Proliferação clonal plasmócitos"
+    }
+  },
+  {
+    "id": "card-12",
+    "dificuldade": "medio",
+    "categoria": "Diagnóstico",
+    "resposta": "Pancreatite",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Inflamação aguda do pâncreas",
+      "2": "Ativação intrapancreática enzimática",
+      "3": "Elevação de amilase e lipase",
+      "4": "Associada a cálculos biliares",
+      "5": "Relação com consumo alcoólico",
+      "6": "Dor epigástrica irradiada dorso"
+    }
+  },
+  {
+    "id": "card-13",
+    "dificuldade": "facil",
+    "categoria": "Exame físico",
+    "resposta": "Teste de Lasègue",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Estiramento do nervo ciático",
+      "2": "Ângulo entre 35-70 graus",
+      "3": "Elevação passiva da perna",
+      "4": "Manobra em decúbito dorsal",
+      "5": "Indica compressão de raízes",
+      "6": "Teste clínico da coluna"
+    }
+  },
+  {
+    "id": "card-14",
+    "dificuldade": "medio",
+    "categoria": "Exame físico",
+    "resposta": "Teste de Lasègue Cruzado",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Também chamado de contralateral.",
+      "2": "Alta especificidade para hérnia.",
+      "3": "Sintomas na perna oposta.",
+      "4": "Eleva o membro assintomático.",
+      "5": "Indica compressão radicular.",
+      "6": "Teste clínico de coluna."
+    }
+  },
+  {
+    "id": "card-15",
+    "dificuldade": "facil",
+    "categoria": "Exame físico",
+    "resposta": "Manobra de Giordano",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Súbita punho-percussão lombar.",
+      "2": "Sugere pielonefrite ou litíase.",
+      "3": "Utiliza borda ulnar.",
+      "4": "Altura da 12ª costela.",
+      "5": "Paciente inclinado para frente.",
+      "6": "Avaliação de dor visceral."
+    }
+  },
+  {
+    "id": "card-16",
+    "dificuldade": "facil",
+    "categoria": "Sinal de alarme",
+    "resposta": "Anestesia em sela",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Perda sensitiva em \"sela\"",
+      "2": "Acomete dermátomos sacrais baixos",
+      "3": "Dormência na região genital",
+      "4": "Indicação de neurocirurgia imediata",
+      "5": "Emergência em dor lombar",
+      "6": "Critério de gravidade neurológica"
+    }
+  },
+  {
+    "id": "card-17",
+    "dificuldade": "facil",
+    "categoria": "Conduta",
+    "resposta": "Esquema RIPE no tratamento da Doença de Pott",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Coquetel para tratar Doença de Pott",
+      "2": "A forma pulmonar trata por 6 meses",
+      "3": "Requer suplementação de piridoxina",
+      "4": "Tratamento dura doze meses",
+      "5": "Causa urina cor avermelhada",
+      "6": "Poliquimioterapia específica prolongada"
+    }
+  },
+  {
+    "id": "card-18",
+    "dificuldade": "facil",
+    "categoria": "Fator de risco",
+    "resposta": "Osteoporose",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Doença dos ossos porosos",
+      "2": "Risco de fraturas espontâneas",
+      "3": "Mortalidade assemelhada ao AVC",
+      "4": "Aumenta internação e reoperações",
+      "5": "Preditor de doença cardiovascular",
+      "6": "Prejudica estabilidade de implantes"
+    }
+  },
+  {
+    "id": "card-19",
+    "dificuldade": "facil",
+    "categoria": "Exame físico",
+    "resposta": "Teste de Schober",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Nome em homenagem a um médico alemão",
+      "2": "Útil na espondilite anquilosante",
+      "3": "Mede mobilidade da coluna",
+      "4": "Requer flexão do tronco",
+      "5": "Anormal se até 5cm",
+      "6": "Indica rigidez vertebral significativa"
+    }
+  },
+  {
+    "id": "card-20",
+    "dificuldade": "facil",
+    "categoria": "Imagem",
+    "resposta": "Radiografia de Tórax e Fratura Vertebral",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Achado incidental comum",
+      "2": "Perfil torácico lateral",
+      "3": "Vértebras visíveis no tórax",
+      "4": "Fratura aparece sem suspeita",
+      "5": "Exame pedido por outro motivo",
+      "6": "Osteoporose não valorizada"
+    }
+  },
+  {
+    "id": "card-21",
+    "dificuldade": "facil",
+    "categoria": "Imagem",
+    "resposta": "Ressonância magnética de coluna lombar",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Não utiliza radiação ionizante",
+      "2": "Alta sensibilidade para discos, raízes nervosas e medula",
+      "3": "Não está indicada na lombalgia aguda inespecífica sem sinais de alarme",
+      "4": "Método de escolha para avaliação de tecidos moles",
+      "5": "Fornece imagens detalhadas em múltiplos planos.",
+      "6": "É especialmente útil em suspeita neurológica ou infecciosa."
+    }
+  },
+  {
+    "id": "card-22",
+    "dificuldade": "medio",
+    "categoria": "Imagem",
+    "resposta": "Cintilografia óssea",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Pesquisa metástases ósseas",
+      "2": "Medicina nuclear diagnóstica",
+      "3": "Uso de radiofármacos",
+      "4": "Avalia atividade osteoblástica",
+      "5": "Detecta lesões multifocais",
+      "6": "É um exame funcional de imagem."
+    }
+  },
+  {
+    "id": "card-23",
+    "dificuldade": "medio",
+    "categoria": "Imagem",
+    "resposta": "Ultrassonografia na urolitíase",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Avalia cálculo urinário",
+      "2": "Limitado para ureter distal",
+      "3": "Sensível para hidronefrose",
+      "4": "Detecta dilatação pielocalicial",
+      "5": "Sem radiação ionizante",
+      "6": "Método inicial não invasivo"
+    }
+  },
+  {
+    "id": "card-24",
+    "dificuldade": "facil",
+    "categoria": "Imagem",
+    "resposta": "TC de abdome e vias urinárias",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Utiliza radiação ionizante.",
+      "2": "Avalia abdome e trato urinário com detalhamento.",
+      "3": "É muito útil na pesquisa de cálculo urinário.",
+      "4": "Pode ser realizada com ou sem contraste.",
+      "5": "Pode esclarecer dor em flanco ou lombar de origem urinária.",
+      "6": "É um exame de imagem seccional."
+    }
+  },
+  {
+    "id": "card-25",
+    "dificuldade": "facil",
+    "categoria": "Laboratório",
+    "resposta": "Hemograma",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Leucocitose sugere infecção",
+      "2": "Anemia pode indicar neoplasia",
+      "3": "Avalia resposta inflamatória sistêmica",
+      "4": "Auxilia na suspeita clínica",
+      "5": "Exame laboratorial inespecífico",
+      "6": "Não define diagnóstico isolado"
+    }
+  },
+  {
+    "id": "card-26",
+    "dificuldade": "dificil",
+    "categoria": "Imagem",
+    "resposta": "Biópsia por TC (padrão-ouro)",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Padrão-ouro para Doença de Pott",
+      "2": "Tomografia computadorizada direciona agulha",
+      "3": "Exame invasivo guiado por imagem",
+      "4": "Coleta tecido da lesão vertebral",
+      "5": "Análise microbiológica e histopatológica",
+      "6": "Procedimento para diagnóstico definitivo"
+    }
+  },
+  {
+    "id": "card-27",
+    "dificuldade": "facil",
+    "categoria": "Laboratório",
+    "resposta": "VHS ou PCR na lombalgia",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Marcadores inflamatórios sistêmicos",
+      "2": "Pode sugerir inflamação ou processo crônico.",
+      "3": "Se negativo é menos provável uma infecção ou neoplasia ativa",
+      "4": "Elevam em processos infecciosos",
+      "5": "Úteis em doenças reumatológicas",
+      "6": "Avaliam atividade inflamatória"
+    }
+  },
+  {
+    "id": "card-28",
+    "dificuldade": "dificil",
+    "categoria": "Laboratório",
+    "resposta": "Marcador genético HLA-B27",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Presente em 90% na Espondilite Anquilosante",
+      "2": "Pilar dos critérios classificatórios",
+      "3": "Associado à uveíte anterior",
+      "4": "Indica início precoce da doença",
+      "5": "Antígeno de leucócitos humanos",
+      "6": "Mimetismo molecular com Klebsiella"
+    }
+  },
+  {
+    "id": "card-29",
+    "dificuldade": "facil",
+    "categoria": "Farmacologia",
+    "resposta": "Codeína",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Metabolizada via CYP2D6",
+      "2": "Opioide fraco pró-fármaco",
+      "3": "Conversão em morfina ativa",
+      "4": "Associação com paracetamol",
+      "5": "Indicado dor moderada",
+      "6": "Risco depressão respiratória"
+    }
+  },
+  {
+    "id": "card-30",
+    "dificuldade": "facil",
+    "categoria": "Farmacologia",
+    "resposta": "Anti-inflamatórios (AINES)",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Igual eficácia entre eles",
+      "2": "Risco gastrointestinal e renal",
+      "3": "Primeira linha de tratamento para lombalgia",
+      "4": "Uso curto recomendado",
+      "5": "Efeito pequeno na dor",
+      "6": "Uso curto recomendado"
+    }
+  },
+  {
+    "id": "card-31",
+    "dificuldade": "facil",
+    "categoria": "Conduta",
+    "resposta": "Abordagem não farmacológica",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Massagem, acupuntura tem evidência de baixa qualidade",
+      "2": "Usado no tratamento de lombalgia mecânica",
+      "3": "Tem foco educativo e preventivo.",
+      "4": "Calor superficial também é recomendação",
+      "5": "Evitar repouso no leito está entre elas",
+      "6": "Opção de tratamento sem uso de medicações"
+    }
+  },
+  {
+    "id": "card-32",
+    "dificuldade": "facil",
+    "categoria": "Conduta",
+    "resposta": "Conduta expectante",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Reavaliação se persistência",
+      "2": "Manter atividades habituais",
+      "3": "Analgesia e orientação",
+      "4": "Sem déficit neurológico",
+      "5": "Dor mecânica autolimitada",
+      "6": "Ausência de sinais de alerta"
+    }
+  },
+  {
+    "id": "card-33",
+    "dificuldade": "facil",
+    "categoria": "Farmacologia",
+    "resposta": "Relaxante muscular",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Alívio curto da dor",
+      "2": "Sedação e tontura comuns",
+      "3": "Geralmente associamos aos AINEs",
+      "4": "Uso por poucos dias",
+      "5": "Sem melhora funcional",
+      "6": "Evitar em idosos"
+    }
+  },
+  {
+    "id": "card-34",
+    "dificuldade": "medio",
+    "categoria": "Farmacologia",
+    "resposta": "Duloxetina",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Evidência incerta na radiculopatia",
+      "2": "Usado para depressão maior, TAG e fibromialgia",
+      "3": "Muitos efeitos adversos",
+      "4": "Melhoram o humor e reduzem a percepção da dor",
+      "5": "Segunda linha após AINEs na lombalgia crônica",
+      "6": "Antidepressivo inibidor da recaptação de serotonina"
+    }
+  },
+  {
+    "id": "card-35",
+    "dificuldade": "facil",
+    "categoria": "Conduta",
+    "resposta": "Tramadol na Lombalgia",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Analgésico opioide fraco",
+      "2": "Atua em receptores centrais",
+      "3": "Indicado dor moderada intensa",
+      "4": "Uso se falha inicial",
+      "5": "Risco dependência efeitos adversos",
+      "6": "Não recomendado uso prolongado"
+    }
+  },
+  {
+    "id": "card-36",
+    "dificuldade": "facil",
+    "categoria": "Exame físico",
+    "resposta": "Dor ciática",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Teste de elevação da perna estendida positivo",
+      "2": "Sou um sintoma presente na lombociatalgia",
+      "3": "Pode ser bilateral em hérnias centrais",
+      "4": "Geralmente é unilateral",
+      "5": "Se distribui conforme raiz nervosa afetada",
+      "6": "Pode ser súbita ou gradual"
+    }
+  },
+  {
+    "id": "card-37",
+    "dificuldade": "facil",
+    "categoria": "Fator de risco",
+    "resposta": "Sinal de alerta (red flags) na lombalgia",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Suspeita síndrome cauda equina",
+      "2": "Déficit neurológico progressivo",
+      "3": "Febre ou perda ponderal",
+      "4": "História prévia neoplasia",
+      "5": "Idade extrema início dor",
+      "6": "Indicadores de causa grave"
+    }
+  },
+  {
+    "id": "card-38",
+    "dificuldade": "facil",
+    "categoria": "Farmacologia",
+    "resposta": "Carisoprodol",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Uso apenas curto prazo (até 2–3 semanas)",
+      "2": "Efeitos comuns: sonolência, tontura, cefaleia",
+      "3": "Há risco de dependência",
+      "4": "É um fármaco relaxante muscular",
+      "5": "Evitar direção e álcool quando usar",
+      "6": "Nome específico, não classe"
+    }
+  },
+  {
+    "id": "card-39",
+    "dificuldade": "dificil",
+    "categoria": "Exame físico",
+    "resposta": "Testes provocativos",
+    "temaPrincipal": "Lombalgia",
+    "dicas": {
+      "1": "Nome desses testes no exame físico",
+      "2": "Teste de Patrick-FABER",
+      "3": "Flexão lombar alivia sintomas",
+      "4": "Teste de Lasègue em radiculopatia",
+      "5": "Percussão dos processos espinhosos",
+      "6": "Teste do sinal supino"
+    }
+  }
+]
