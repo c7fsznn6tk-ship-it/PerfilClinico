@@ -201,8 +201,13 @@ const initialState: PersistedSnapshot = {
 }
 
 function toast(message: string, tone: ToastMessage['tone'] = 'info'): ToastMessage {
+  const id =
+    typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+
   return {
-    id: crypto.randomUUID(),
+    id,
     tone,
     message,
   }
