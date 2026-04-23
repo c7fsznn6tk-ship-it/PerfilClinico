@@ -23,6 +23,7 @@ import {
   getChallengeOptions,
   getDefaultSettings,
   getInitialChallengeTimes,
+  normalizeSettings,
   normalizeCards,
   sanitizeImportedCards,
   sanitizeImportedSnapshot,
@@ -253,14 +254,15 @@ export const useGameStore = create<GameStore>()(
       openSettingsModal: false,
 
       initializeMatch: (groupNames, settings) => {
-        const sourceCards = settings.demoMode
+        const normalizedSettings = normalizeSettings(settings)
+        const sourceCards = normalizedSettings.demoMode
           ? (get().customCards ?? baseCards).slice(0, 24)
           : get().customCards ?? baseCards
         const { board, usedCardIds } = buildBoard(sourceCards)
         set({
           status: 'playing',
           groups: createInitialGroups(groupNames),
-          settings,
+          settings: normalizedSettings,
           turnIndex: 0,
           board,
           usedCardIds,
@@ -269,12 +271,12 @@ export const useGameStore = create<GameStore>()(
           turn: createInitialTurnState(),
           timer: {
             isPaused: false,
-            timeLeft: settings.tempoTurno,
+            timeLeft: normalizedSettings.tempoTurno,
           },
           answerModal: initialAnswerModal,
           challenge: {
             ...defaultChallengeSession,
-            ...getInitialChallengeTimes(settings),
+            ...getInitialChallengeTimes(normalizedSettings),
           },
           finalSummary: null,
           toast: toast('Partida iniciada com sucesso.', 'success'),
@@ -558,14 +560,14 @@ export const useGameStore = create<GameStore>()(
 
       updateSettings: (partial) =>
         set((state) => ({
-          settings: {
+          settings: normalizeSettings({
             ...state.settings,
             ...partial,
             bonus: {
               ...state.settings.bonus,
               ...partial.bonus,
             },
-          },
+          }),
           timer: {
             ...state.timer,
             timeLeft: partial.tempoTurno ?? state.timer.timeLeft,
@@ -968,6 +970,7 @@ export const useGameStore = create<GameStore>()(
         if (!sanitizeImportedSnapshot(snapshot)) return false
         set((state) => ({
           ...snapshot,
+          settings: normalizeSettings(snapshot.settings),
           customCards: state.customCards,
           toast: toast('Estado importado com sucesso.', 'success'),
         }))
@@ -981,6 +984,14 @@ export const useGameStore = create<GameStore>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => localStorage),
+      merge: (persistedState, currentState) => {
+        const persisted = persistedState as Partial<GameStore>
+        return {
+          ...currentState,
+          ...persisted,
+          settings: normalizeSettings(persisted.settings ?? currentState.settings),
+        }
+      },
       partialize: (state) => ({
         status: state.status,
         groups: state.groups,
