@@ -49,6 +49,25 @@ export function getDefaultSettings(): MatchSettings {
     modoPenalidadeErro: 'manual',
     tempoTotalPartidaMinutos: null,
     demoMode: false,
+    imagemCartaFrente: null,
+    imagemCartaVerso: null,
+  }
+}
+
+export function normalizeSettings(settings: Partial<MatchSettings> | MatchSettings): MatchSettings {
+  const defaults = getDefaultSettings()
+
+  return {
+    ...defaults,
+    ...settings,
+    bonus: {
+      ...defaults.bonus,
+      ...settings.bonus,
+    },
+    imagemCartaFrente:
+      typeof settings.imagemCartaFrente === 'string' ? settings.imagemCartaFrente : null,
+    imagemCartaVerso:
+      typeof settings.imagemCartaVerso === 'string' ? settings.imagemCartaVerso : null,
   }
 }
 
@@ -135,6 +154,7 @@ export function sanitizeImportedSnapshot(
     typeof snapshot.turnIndex === 'number' &&
     typeof snapshot.status === 'string' &&
     typeof snapshot.settings === 'object' &&
+    snapshot.settings !== null &&
     typeof snapshot.turn === 'object' &&
     typeof snapshot.timer === 'object' &&
     typeof snapshot.answerModal === 'object' &&
