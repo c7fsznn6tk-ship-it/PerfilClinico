@@ -157,6 +157,12 @@ function App() {
   ])
 
   function handleCardClick(slotId: number) {
+    const slot = board.find((item) => item.slotId === slotId)
+    if (slot?.status === 'ativa') {
+      setZoomedSlotId(slotId)
+      return
+    }
+
     selectCard(slotId)
   }
 
@@ -280,6 +286,8 @@ function App() {
       <GameBoard
         board={board}
         activeSlotId={activeSlotId}
+        cardFrontImage={settings.imagemCartaFrente}
+        cardBackImage={settings.imagemCartaVerso}
         currentGroupName={currentGroup?.nome ?? null}
         currentTurnSummary={turn.rollOutcome?.label ?? null}
         currentTurnOutcome={turn.phase === 'jogando' ? turn.rollOutcome : null}
@@ -317,7 +325,12 @@ function App() {
         onContinueWithoutExplanation={continueWithoutExplanation}
       />
 
-      <ExpandedCardModal isOpen={zoomedSlotId !== null} slot={zoomedCard} onClose={() => setZoomedSlotId(null)} />
+      <ExpandedCardModal
+        isOpen={zoomedSlotId !== null}
+        slot={zoomedCard}
+        frontImage={settings.imagemCartaFrente}
+        onClose={() => setZoomedSlotId(null)}
+      />
 
       <ExplanationModal
         isOpen={answerModal.explanationOpen}

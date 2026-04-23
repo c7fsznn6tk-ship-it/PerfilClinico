@@ -341,6 +341,10 @@ p {
   transform: none;
 }
 
+.card-tile.is-zoomable {
+  cursor: zoom-in;
+}
+
 .card-tile.is-flipping {
   animation: card-flip-reveal 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -411,16 +415,36 @@ p {
 
 .card-position {
   position: absolute;
-  top: 18px;
-  right: 22px;
+  top: 16px;
+  right: 18px;
   z-index: 3;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(10, 34, 68, 0.78);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 88px;
+  padding: 8px 12px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(8, 28, 61, 0.94), rgba(28, 67, 122, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 24px rgba(7, 19, 39, 0.34);
   color: #f8fbff;
-  font-weight: 700;
-  font-size: 0.82rem;
   letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+}
+
+.card-position-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+.card-position-value {
+  font-size: 1.02rem;
+  line-height: 1;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .card-face {
@@ -555,6 +579,19 @@ p {
   text-shadow: 0 2px 4px rgba(7, 24, 49, 0.45);
 }
 
+.card-footer-meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(8, 28, 61, 0.94), rgba(28, 67, 122, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 24px rgba(7, 19, 39, 0.28);
+  backdrop-filter: blur(4px);
+}
+
 .detail-panel,
 .controls-panel {
   display: flex;
@@ -663,6 +700,15 @@ p {
   border: 1px solid rgba(23, 49, 80, 0.15);
   padding: 12px 14px;
   background: #fff;
+}
+
+.settings-card-preview {
+  width: min(100%, 240px);
+  aspect-ratio: 5 / 8;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(23, 49, 80, 0.12);
+  box-shadow: 0 12px 30px rgba(15, 33, 55, 0.12);
 }
 
 .two-columns {
@@ -1282,12 +1328,22 @@ p {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.26);
+  cursor: zoom-out;
 }
 
 .expanded-card-position {
   top: 22px;
   right: 24px;
-  font-size: 1.2rem;
+  min-width: 120px;
+  padding: 12px 16px;
+}
+
+.expanded-card-position .card-position-label {
+  font-size: 0.74rem;
+}
+
+.expanded-card-position .card-position-value {
+  font-size: 1.45rem;
 }
 
 .expanded-card-header-chip {

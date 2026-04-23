@@ -77,6 +77,8 @@ export type MatchSettings = {
   modoPenalidadeErro: ErrorPenaltyMode
   tempoTotalPartidaMinutos?: number | null
   demoMode: boolean
+  imagemCartaFrente: string | null
+  imagemCartaVerso: string | null
 }
 
 export type ToastMessage = {
