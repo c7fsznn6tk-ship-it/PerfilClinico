@@ -5,6 +5,8 @@ import cartaFrente from '../assets/cards/CartaFrente2.png'
 
 type CardTileProps = {
   slot: CardInPlay
+  frontImage?: string | null
+  backImage?: string | null
   isActive: boolean
   interactionLocked: boolean
   onClick: () => void
@@ -14,6 +16,8 @@ type CardTileProps = {
 
 export function CardTile({
   slot,
+  frontImage,
+  backImage,
   isActive,
   interactionLocked,
   onClick,
@@ -21,24 +25,38 @@ export function CardTile({
   onExpand,
 }: CardTileProps) {
   const card = getCardDetails(slot.cardId)
-  const backgroundImage = slot.status === 'virada' ? cartaVerso : cartaFrente
+  const backgroundImage =
+    slot.status === 'virada' ? backImage || cartaVerso : frontImage || cartaFrente
   const isFirstReveal = slot.status === 'ativa' && slot.dicasReveladas === 1
   const displayNumber = card?.id.replace('card-', '') ?? String(slot.slotId)
+  const canExpandFromCard = slot.status === 'ativa'
   const canReveal = !interactionLocked && slot.status !== 'resolvida'
+  const canInteract = canReveal || canExpandFromCard
 
   const visibleHintKeys = Array.from({ length: slot.dicasReveladas }, (_, index) => String(6 - index))
   const revealedHintSet = new Set(visibleHintKeys)
+
+  function handleCardAction() {
+    if (canExpandFromCard) {
+      onExpand()
+      return
+    }
+    onClick()
+  }
 
   return (
     <article className={`card-shell ${slot.status === 'resolvida' ? 'is-resolved' : ''}`}>
       <button
         type="button"
-        className={`card-tile ${isActive ? 'is-active' : ''} ${slot.status === 'resolvida' ? 'is-resolved' : ''} ${slot.status === 'virada' ? 'is-face-down' : 'is-face-up'} ${isFirstReveal ? 'is-flipping' : ''}`}
-        onClick={onClick}
-        disabled={!canReveal}
+        className={`card-tile ${isActive ? 'is-active' : ''} ${slot.status === 'resolvida' ? 'is-resolved' : ''} ${slot.status === 'virada' ? 'is-face-down' : 'is-face-up'} ${isFirstReveal ? 'is-flipping' : ''} ${canExpandFromCard ? 'is-zoomable' : ''}`}
+        onClick={handleCardAction}
+        disabled={!canInteract}
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <span className="card-position">#{displayNumber}</span>
+        <span className="card-position" aria-label={`Carta ${displayNumber}`}>
+          <span className="card-position-label">Carta</span>
+          <strong className="card-position-value">#{displayNumber}</strong>
+        </span>
         {slot.status === 'virada' ? (
           <div className="card-face card-face-back">
             <span className="card-status-badge">Pronta</span>

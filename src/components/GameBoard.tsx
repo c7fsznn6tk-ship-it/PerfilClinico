@@ -26,6 +26,8 @@ function getOrientationClass(outcome: TurnRollOutcome | null) {
 type GameBoardProps = {
   board: CardInPlay[]
   activeSlotId: number | null
+  cardFrontImage?: string | null
+  cardBackImage?: string | null
   currentGroupName?: string | null
   currentTurnSummary?: string | null
   currentTurnOutcome?: TurnRollOutcome | null
@@ -41,6 +43,8 @@ type GameBoardProps = {
 export function GameBoard({
   board,
   activeSlotId,
+  cardFrontImage,
+  cardBackImage,
   currentGroupName,
   currentTurnSummary,
   currentTurnOutcome,
@@ -80,6 +84,8 @@ export function GameBoard({
           <CardTile
             key={`${slot.slotId}-${slot.cardId}`}
             slot={slot}
+            frontImage={cardFrontImage}
+            backImage={cardBackImage}
             isActive={activeSlotId === slot.slotId}
             interactionLocked={interactionLocked}
             onClick={() => onCardClick(slot.slotId)}

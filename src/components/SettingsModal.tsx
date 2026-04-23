@@ -29,6 +29,15 @@ function buildCardMap(cards: Card[]) {
   return new Map(cards.map((card) => [card.id, { ...card, dicas: { ...card.dicas } }]))
 }
 
+function readImageFileAsDataUrl(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result))
+    reader.onerror = () => reject(new Error('Falha ao ler a imagem.'))
+    reader.readAsDataURL(file)
+  })
+}
+
 export function SettingsModal({
   isOpen,
   settings,
@@ -132,6 +141,29 @@ export function SettingsModal({
     }
     reader.readAsText(file)
     event.target.value = ''
+  }
+
+  async function handleImageSelection(
+    event: ChangeEvent<HTMLInputElement>,
+    field: 'imagemCartaFrente' | 'imagemCartaVerso',
+  ) {
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    if (!['image/png', 'image/jpeg'].includes(file.type)) {
+      window.alert('Selecione um arquivo .png, .jpg ou .jpeg.')
+      event.target.value = ''
+      return
+    }
+
+    try {
+      const imageDataUrl = await readImageFileAsDataUrl(file)
+      onSave({ [field]: imageDataUrl })
+    } catch {
+      window.alert('Nao foi possivel carregar a imagem selecionada.')
+    } finally {
+      event.target.value = ''
+    }
   }
 
   if (!isOpen) return null
@@ -263,6 +295,54 @@ export function SettingsModal({
                   }
                 />
                 <span>Bônus de sequência</span>
+              </label>
+            </div>
+
+            <div className="two-columns">
+              <label className="field">
+                <span>Frente da carta (.png, .jpg)</span>
+                <input
+                  type="file"
+                  accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                  onChange={(event) => void handleImageSelection(event, 'imagemCartaFrente')}
+                />
+                {settings.imagemCartaFrente ? (
+                  <img
+                    src={settings.imagemCartaFrente}
+                    alt="Preview da frente da carta"
+                    className="settings-card-preview"
+                  />
+                ) : null}
+                <button
+                  type="button"
+                  className="ghost-button"
+                  onClick={() => onSave({ imagemCartaFrente: null })}
+                >
+                  Restaurar frente padrao
+                </button>
+              </label>
+
+              <label className="field">
+                <span>Verso da carta (.png, .jpg)</span>
+                <input
+                  type="file"
+                  accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                  onChange={(event) => void handleImageSelection(event, 'imagemCartaVerso')}
+                />
+                {settings.imagemCartaVerso ? (
+                  <img
+                    src={settings.imagemCartaVerso}
+                    alt="Preview do verso da carta"
+                    className="settings-card-preview"
+                  />
+                ) : null}
+                <button
+                  type="button"
+                  className="ghost-button"
+                  onClick={() => onSave({ imagemCartaVerso: null })}
+                >
+                  Restaurar verso padrao
+                </button>
               </label>
             </div>
           </>

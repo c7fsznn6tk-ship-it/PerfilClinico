@@ -6,10 +6,11 @@ import cartaFrente from '../assets/cards/CartaFrente2.png'
 type ExpandedCardModalProps = {
   isOpen: boolean
   slot: CardInPlay | null
+  frontImage?: string | null
   onClose: () => void
 }
 
-export function ExpandedCardModal({ isOpen, slot, onClose }: ExpandedCardModalProps) {
+export function ExpandedCardModal({ isOpen, slot, frontImage, onClose }: ExpandedCardModalProps) {
   useEffect(() => {
     if (!isOpen) return undefined
 
@@ -47,9 +48,22 @@ export function ExpandedCardModal({ isOpen, slot, onClose }: ExpandedCardModalPr
         <div className="expanded-card-stage">
           <div
             className="expanded-card-surface"
-            style={{ backgroundImage: `url(${cartaFrente})` }}
+            onClick={onClose}
+            role="button"
+            tabIndex={0}
+            aria-label="Fechar carta ampliada"
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                onClose()
+              }
+            }}
+            style={{ backgroundImage: `url(${frontImage || cartaFrente})` }}
           >
-            <span className="card-position expanded-card-position">#{displayNumber}</span>
+            <span className="card-position expanded-card-position" aria-label={`Carta ${displayNumber}`}>
+              <span className="card-position-label">Carta</span>
+              <strong className="card-position-value">#{displayNumber}</strong>
+            </span>
 
             <div className="card-header-chip expanded-card-header-chip">
               <span className="card-header-label expanded-card-header-label">{card.categoria}</span>
