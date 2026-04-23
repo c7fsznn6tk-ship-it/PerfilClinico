@@ -81,9 +81,17 @@ function App() {
   const currentGroup = turnIndex >= 0 ? groups[turnIndex] ?? null : null
   const answerCard = board.find((slot) => slot.slotId === answerModal.slotId) ?? null
   const zoomedCard = board.find((slot) => slot.slotId === zoomedSlotId) ?? null
+  const activeCard = board.find((slot) => slot.slotId === activeSlotId) ?? null
   const resolvedCards = getResolvedCards()
   const baseCards = getBaseCards()
   const hintsAllowed = turn.rollOutcome?.hintsAllowed ?? 0
+  const canRevealMoreHintsOnActiveCard =
+    turn.phase === 'jogando' &&
+    activeCard?.status === 'ativa' &&
+    activeCard.dicasReveladas < 6 &&
+    hintsAllowed > 0 &&
+    turn.hintsUsed < hintsAllowed &&
+    !answerModal.isOpen
   const turnBadge =
     turn.phase === 'jogando' || turn.phase === 'rolandoDado'
       ? turn.rollOutcome?.canGuessWithoutPenalty
@@ -125,7 +133,6 @@ function App() {
       revealTimeoutRef.current = null
     }
 
-    const activeCard = board.find((slot) => slot.slotId === activeSlotId) ?? null
     const shouldAutoReveal =
       turn.phase === 'jogando' &&
       activeSlotId !== null &&
@@ -158,7 +165,14 @@ function App() {
 
   function handleCardClick(slotId: number) {
     const slot = board.find((item) => item.slotId === slotId)
-    if (slot?.status === 'ativa') {
+    const isActiveCard = slot?.slotId === activeSlotId && slot?.status === 'ativa'
+
+    if (isActiveCard && canRevealMoreHintsOnActiveCard) {
+      revealNextHint(slotId)
+      return
+    }
+
+    if (isActiveCard) {
       setZoomedSlotId(slotId)
       return
     }
@@ -288,6 +302,7 @@ function App() {
         activeSlotId={activeSlotId}
         cardFrontImage={settings.imagemCartaFrente}
         cardBackImage={settings.imagemCartaVerso}
+        canExpandActiveCardOnClick={!canRevealMoreHintsOnActiveCard}
         currentGroupName={currentGroup?.nome ?? null}
         currentTurnSummary={turn.rollOutcome?.label ?? null}
         currentTurnOutcome={turn.phase === 'jogando' ? turn.rollOutcome : null}

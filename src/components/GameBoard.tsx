@@ -28,6 +28,7 @@ type GameBoardProps = {
   activeSlotId: number | null
   cardFrontImage?: string | null
   cardBackImage?: string | null
+  canExpandActiveCardOnClick: boolean
   currentGroupName?: string | null
   currentTurnSummary?: string | null
   currentTurnOutcome?: TurnRollOutcome | null
@@ -45,6 +46,7 @@ export function GameBoard({
   activeSlotId,
   cardFrontImage,
   cardBackImage,
+  canExpandActiveCardOnClick,
   currentGroupName,
   currentTurnSummary,
   currentTurnOutcome,
@@ -88,6 +90,7 @@ export function GameBoard({
             backImage={cardBackImage}
             isActive={activeSlotId === slot.slotId}
             interactionLocked={interactionLocked}
+            expandOnCardClick={activeSlotId === slot.slotId && canExpandActiveCardOnClick}
             onClick={() => onCardClick(slot.slotId)}
             onShowAnswer={() => onShowAnswer(slot.slotId)}
             onExpand={() => onExpandCard(slot.slotId)}

@@ -9,6 +9,7 @@ type CardTileProps = {
   backImage?: string | null
   isActive: boolean
   interactionLocked: boolean
+  expandOnCardClick: boolean
   onClick: () => void
   onShowAnswer: () => void
   onExpand: () => void
@@ -20,6 +21,7 @@ export function CardTile({
   backImage,
   isActive,
   interactionLocked,
+  expandOnCardClick,
   onClick,
   onShowAnswer,
   onExpand,
@@ -29,7 +31,7 @@ export function CardTile({
     slot.status === 'virada' ? backImage || cartaVerso : frontImage || cartaFrente
   const isFirstReveal = slot.status === 'ativa' && slot.dicasReveladas === 1
   const displayNumber = card?.id.replace('card-', '') ?? String(slot.slotId)
-  const canExpandFromCard = slot.status === 'ativa'
+  const canExpandFromCard = slot.status === 'ativa' && expandOnCardClick
   const canReveal = !interactionLocked && slot.status !== 'resolvida'
   const canInteract = canReveal || canExpandFromCard
 
